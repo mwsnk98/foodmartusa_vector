@@ -1,6 +1,16 @@
 view: sales_fact {
   sql_table_name: actian.sales_fact ;;
 
+  dimension: time_marker_v1 {
+    type: string
+    sql: 'marker_v1' ;;
+  }
+
+  dimension: time_marker_v2 {
+    type: string
+    sql: 'marker_v2' ;;
+  }
+
   dimension: customer_id {
     type: number
     # hidden: yes
