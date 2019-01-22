@@ -194,3 +194,5 @@ explore: warehouse_class {}
 explore: sales_drivers {}
 
 explore: db_version{}
+
+explore: ccmetrics {}
