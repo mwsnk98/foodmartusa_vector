@@ -4,14 +4,14 @@ view: sales_drivers {
       SELECT p1.product_name AS product_name1, p2.product_name AS product_name2, how_many_sales
       FROM (
 
-      SELECT p_id_1, p_id_2, count(*) AS how_many_sales
+      SELECT p_id_1, p_id_2, sum(unit_sales) AS how_many_sales
       FROM (
       --products by customer and date
-      SELECT t1.product_id AS p_id_1, t2.product_id AS p_id_2, t1.sales_date, t1.customer_id
+      SELECT t1.product_id AS p_id_1, t2.product_id AS p_id_2, t1.sales_date, t1.customer_id, t1.unit_sales
       from
-      (SELECT distinct product_id, sales_date, customer_id from sales_fact where year(sales_date)<=2018) AS t1
+      (SELECT distinct product_id, sales_date, customer_id, unit_sales from sales_fact where year(sales_date)<=2018) AS t1
       JOIN
-      (SELECT distinct product_id, sales_date, customer_id from sales_fact where year(sales_date)<=2018) AS t2
+      (SELECT distinct product_id, sales_date, customer_id, unit_sales from sales_fact where year(sales_date)<=2018) AS t2
       ON (
       t1.sales_date = t2.sales_date AND
       t1.customer_id = t2.customer_id AND

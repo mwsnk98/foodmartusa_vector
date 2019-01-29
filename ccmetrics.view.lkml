@@ -13,11 +13,11 @@ view: ccmetrics {
     sql: ${TABLE}.executiontimeseconds ;;
   }
 
-  measure: count {
+  measure: queries_served {
     type: count
   }
 
-  measure: average_executiontime {
+  measure: average_execution_seconds {
     type: average
     sql: ${executiontimeseconds} ;;
   }
