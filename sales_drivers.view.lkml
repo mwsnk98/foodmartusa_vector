@@ -28,12 +28,7 @@ view: sales_drivers {
       ;;
   }
 
-  dimension: time_marker_v3 {
-    type: string
-    sql: 'marker_v3' ;;
-  }
-
-  measure: count {
+    measure: count {
     type: count
     drill_fields: [detail*]
   }
