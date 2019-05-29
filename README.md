@@ -1,4 +1,4 @@
 # foodmartusa
-Vectorwise Foodmart 
+Vectorwise Foodmart
 
 Welcome to my readme
